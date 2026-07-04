@@ -37,7 +37,9 @@ dann handeln. Die Realität weicht IMMER von der Annahme ab.
 
 ### 5. Pfade sind die häufigste Fehlerquelle
 - Repos liegen direkt in `~` (nicht in Unterordnern)
-- Download-Ordner heißt `Download` OHNE s
+- Download-Ordner: IMMER zuerst prüfen mit: ls ~/storage/downloads/ | grep dateiname
+- Zwei Pfade möglich: ~/storage/shared/Download/ oder ~/storage/downloads/
+- Samsung hängt -1 an wenn Dateiname schon existiert — vor cp immer ls | grep
 - Tablet und Handy haben unterschiedliche Ordnernamen für dasselbe Repo
   (Beispiel: `valuebet` auf Tablet = `crown-v10` auf Handy)
 - Im Zweifel: erst `pwd` und `ls` machen lassen

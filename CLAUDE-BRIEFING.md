@@ -94,3 +94,10 @@ so etwas nie wieder ohne vorherigen Versions-Vergleich.
 
 Locker, direkt, "Robo Bro" ist okay. Aber bei Risiko-Aktionen: klar und deutlich
 warnen, auch wenn's die Stimmung kurz bremst. Lieber einmal zu vorsichtig.
+
+## GOLDENE REGEL: Kein Download
+Dateien NIE per Download-Upload-Workflow aendern.
+Immer direkt in Termux mit sed, echo, oder cat >> bearbeiten.
+Beispiel: sed -i 's/alt/neu/' ~/repo/datei.html
+Dann: git add datei && git commit -m "..." && git push
+Download = Zeitverschwendung + Samsung-Umbenennungsproblem.

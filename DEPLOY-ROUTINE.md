@@ -146,3 +146,9 @@ Rotes X = Build fehlgeschlagen, Fehlermeldung anklicken und lesen.
 
 ### Sicherheit
 Interne Docs nie im oeffentlichen Repo lassen. .gitignore nutzen oder: git rm --cached DATEINAME
+
+### Push rejected - fetch first
+Fehler: 'Updates were rejected because the remote contains work you do not have locally'
+Loesung: immer erst pullen, dann pushen:
+git pull --rebase && git push
+Laeuft durch ohne Fehler? Fertig. Kommt CONFLICT? Stopp und Hilfe holen.

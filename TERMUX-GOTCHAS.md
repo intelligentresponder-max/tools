@@ -115,3 +115,14 @@ cp ~/storage/shared/Download/DATEI2.md .
 cp ~/storage/shared/Download/DATEI3.md .
 ```
 
+
+---
+
+## Zwei Download-Pfade
+
+storage/shared/Download/ und storage/downloads/ sind dasselbe. Falls einer nicht klappt, anderen probieren.
+
+## Samsung benennt Dateien um
+
+Gleicher Name im Download = Samsung haengt -1 an. Vorher pruefen:
+ls ~/storage/downloads/ | grep dateiname

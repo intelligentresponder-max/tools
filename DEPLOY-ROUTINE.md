@@ -152,3 +152,16 @@ Fehler: 'Updates were rejected because the remote contains work you do not have 
 Loesung: immer erst pullen, dann pushen:
 git pull --rebase && git push
 Laeuft durch ohne Fehler? Fertig. Kommt CONFLICT? Stopp und Hilfe holen.
+
+### Unstaged Changes vor pull --rebase
+Fehler: 'cannot pull with rebase: You have unstaged changes'
+Loesung: erst stashen, dann pullen, dann stash zurueckholen:
+git stash && git pull --rebase && git stash pop && git add . && git commit -m 'msg' && git push
+
+### Geraetewechsel Handy/Tablet/PC
+Beim Wechsel des Geraets immer zuerst diese Fragen klaeren:
+1. Wo bin ich gerade? (Handy / Tablet / PC)
+2. Ist das Repo auf diesem Geraet geklont? (ls ~/REPO)
+3. Termux-Speicherzugriff aktiv? (termux-setup-storage)
+4. Git-Email korrekt gesetzt? git config user.email 'intelligentresponder-max@users.noreply.github.com'
+Repo noch nicht da? Klonen: git clone https://github.com/intelligentresponder-max/REPO.git ~/REPO

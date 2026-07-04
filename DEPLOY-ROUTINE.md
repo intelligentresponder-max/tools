@@ -124,3 +124,25 @@ git add . && git commit -m "BESCHREIBUNG" && git push origin master
 ---
 
 *Erstellt von Robo Bro für André — damit Repo-Deploys bei jeder Temperatur einfach bleiben. 🥤*
+
+---
+## Learnings 04.07.2026
+
+### Jekyll immer von Anfang an deaktivieren
+touch .nojekyll && git add .nojekyll && git commit -m 'Jekyll deaktivieren' && git push
+
+### Build-Fehler debuggen
+Neue Dateien geben 404 aber alte Seite läuft? Actions-Tab checken:
+github.com/intelligentresponder-max/REPO/actions
+Rotes X = Build fehlgeschlagen, Fehlermeldung anklicken und lesen.
+'Deployment failed, try again later' = GitHub-Fehler, kein Code-Fehler. Einfach warten + nochmal pushen.
+
+### Google Search Console Verifizierung
+1. HTML-Datei runterladen
+2. cp /storage/emulated/0/Download/google*.html ~/REPO/
+3. git add . && git commit -m 'Google Verifizierung' && git push
+4. 3-5 Min warten, dann VERIFY druecken
+5. Datei NIE loeschen - sonst verliert man die Verifizierung
+
+### Sicherheit
+Interne Docs nie im oeffentlichen Repo lassen. .gitignore nutzen oder: git rm --cached DATEINAME

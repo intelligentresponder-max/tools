@@ -1,79 +1,40 @@
-# tools
-> Workflow-Dokumentation & Routinen für alle Projekte unter `intelligentresponder-max`  
-> Maintainer: André Schwarz / ASGlobal Frankfurt | Stand: Juli 2026
+# tools — Routinen für alle Projekte
 
-Dieses Repo hat keinen Code — nur Dokumentation. Es ist das Gehirn hinter dem Setup.  
-Wenn du (oder Claude) nicht mehr weißt, wie etwas geht: hier nachschauen.
+**Regel Nr. 1: Jeder Claude/KI-Agent liest dieses Repo BEVOR ein neues Projekt startet.**
 
----
+## Routinen-Übersicht
 
-## 📁 Dateien in diesem Repo
-
-| Datei | Inhalt |
+| Routine | Wann |
 |---|---|
-| `DEPLOY-ROUTINE.md` | `grab`, `deploy`, `clean` — der komplette Push-Workflow von Termux zu GitHub Pages |
-| `FRAGE-ROUTINE.md` | Wie du mit Claude arbeitest — Prompt-Struktur, Kontext geben, Iterations-Workflow |
-| `RENAME-ROUTINE.md` | Dateien & Ordner umbenennen in Termux, Git-sicher |
-| `REPOS-OVERVIEW.md` | Alle aktiven Repos, Zweck, URLs, Status auf einen Blick |
+| **DEPLOY-ROUTINE.md** | Datei von Claude → Downloads → Repo → GitHub Pages |
+| **FORMULAR-ROUTINE.md** | Neues Formular bauen (5-Sektionen-Standard) |
+| **FRAGE-ROUTINE.md** | Checkliste VOR jedem neuen Formular/Projekt |
+| **FOTO-ROUTINE.md** | Screenshots & Fotos mit Text/Bild an Claude übergeben |
+| **KONFLIKT-ROUTINE.md** | git push rejected / Merge-Konflikte lösen |
+| **CURL-CHECK-ROUTINE.md** | Live-Deployment ohne Browser verifizieren |
+| **WINDOWS-ROUTINE.md** | ⚡ AKTIVIEREN wenn André sagt "bin am PC" |
+| **DATEINAME-ROUTINE.md** | index(1).html-Problem & Prefix-Kollisionen |
+| **BATCH-ROUTINE.md** | Änderungen sammeln, EIN Push statt sieben |
 
----
+## Eiserne Regeln (gelten immer)
 
-## ⚡ Schnellstart (nach langer Pause)
+1. **grab nimmt nur EINE Datei** — immer einzeln aufrufen
+2. **Vor grab: alte Versionen aus Downloads löschen** (`rm basename*.html`)
+3. **Integrity-Check vor jedem Push**: `grep -c "keyword"` auf INHALT, nie auf Dateinamen
+4. **`echo "OK: datei <- quelle"`** vor jedem Push
+5. **Branch beachten**: telavendelele = `master`, alle anderen = `main`
+6. **Push rejected?** → KONFLIKT-ROUTINE (pull --rebase)
+7. **Nach Push: 2 Min warten**, dann CURL-CHECK
+8. **Keine Latein-Phrasen** auf Andrés Seiten
+9. **Kein Freelance-/Gewerbe-Framing** — André hat kein Gewerbe
+10. **André sagt "bin am PC"?** → WINDOWS-ROUTINE aktivieren, Termux-Befehle stoppen
 
-1. **Termux öffnen**
-2. `cd ~/storage/shared/<repo-name>` — in das richtige Verzeichnis
-3. `grab` — aktuellen Stand holen
-4. Änderungen machen
-5. `deploy "kurze Commit-Message"` — live pushen
+## Repos & Branches
 
-Details: [`DEPLOY-ROUTINE.md`](./DEPLOY-ROUTINE.md)
-
----
-
-## 🗂️ Aktive Projekte
-
-Vollständige Übersicht → [`REPOS-OVERVIEW.md`](./REPOS-OVERVIEW.md)
-
-Kurzversion:
-- **texter-portfolio** — Portfolio-Hub (ASGlobal)
-- **bewerbung-copywriter** — Roman Mayer Bewerbung (abgeschlossen)
-- **bangla-hilfe** — DE/Bengali Community-Plattform
-- **turmhotel** — Gästeportal Turmhotel Frankfurt
-- **crown-v10** — Value-Betting-System (Upgrade geplant)
-- **Sneaks4seek** — Sneaker-Marketplace
-
----
-
-## 🧠 Arbeiten mit Claude (Robo Bro)
-
-Kontext am Anfang jeder Session:
-```
-Ich bin André, Frankfurt. Termux/Android, Coding-Beginner.
-Aktuelles Projekt: [Repo-Name]
-Ich will: [konkretes Ziel]
-```
-
-Vollständige Routine: [`FRAGE-ROUTINE.md`](./FRAGE-ROUTINE.md)
-
----
-
-## 🔧 Toolchain
-
-Alle Shell-Funktionen leben in `~/.bashrc` auf dem Android-Gerät.  
-Nicht in diesem Repo — aber hier dokumentiert.
-
-```bash
-grab              # git pull
-deploy "msg"      # git add . && git commit -m "msg" && git push
-clean             # temporäre Dateien löschen
-```
-
----
-
-## 📌 Wichtige Links
-
-| | |
-|---|---|
-| GitHub-Account | https://github.com/intelligentresponder-max |
-| Portfolio | https://intelligentresponder-max.github.io/texter-portfolio |
-| CROWN v10 | https://github.com/intelligentresponder-max/crown-v10 |
+| Repo | Branch | Zweck |
+|---|---|---|
+| tools | main | Dieses Repo — Routinen |
+| bewerbung-copywriter | main | Bewerbung Roman Mayer |
+| texter-portfolio | main | Freelance-Portfolio (6 Seiten) |
+| telavendelele | **master** | Autos Frankfurt ↔ Comer See |
+| Sneaks4seek | main | Sneaker-Plattform |

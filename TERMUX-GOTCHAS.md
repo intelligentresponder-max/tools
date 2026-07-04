@@ -126,3 +126,14 @@ storage/shared/Download/ und storage/downloads/ sind dasselbe. Falls einer nicht
 
 Gleicher Name im Download = Samsung haengt -1 an. Vorher pruefen:
 ls ~/storage/downloads/ | grep dateiname
+## Regel: Dateien nie blind herunterladen
+
+Wenn eine Datei schon im Download-Ordner liegt benennt Samsung sie in -1 um.
+Besser: Dateien direkt in Termux bearbeiten mit sed oder echo, dann git push.
+Falls doch Download noetig: erst loeschen mit rm ~/storage/downloads/datei, dann neu laden.
+
+## Claude kann nicht direkt zu GitHub pushen
+Claude arbeitet in /tmp — kein GitHub-Auth vorhanden. Dateien immer per present_files runterladen, dann selbst per git add/commit/push hochladen.
+
+## web_fetch funktioniert nicht fuer JavaScript-Seiten
+texter-portfolio und andere JS-Seiten kann Claude nicht lesen. Stattdessen: Screenshot schicken.

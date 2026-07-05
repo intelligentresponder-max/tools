@@ -101,3 +101,10 @@ Immer direkt in Termux mit sed, echo, oder cat >> bearbeiten.
 Beispiel: sed -i 's/alt/neu/' ~/repo/datei.html
 Dann: git add datei && git commit -m "..." && git push
 Download = Zeitverschwendung + Samsung-Umbenennungsproblem.
+
+## GOLDENE REGEL 2: Dateien direkt in Termux erstellen
+Wenn Claude sagt "erstellt" — IMMER sofort Termux-Befehl mitliefern:
+cat > ~/tools/DATEI.md << 'EOF2'
+...Inhalt...
+EOF2
+Dann push. NIEMALS auf /tmp verlassen.

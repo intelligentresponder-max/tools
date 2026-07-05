@@ -9,7 +9,10 @@
 | **DEPLOY-ROUTINE.md** | Datei von Claude → Downloads → Repo → GitHub Pages |
 | **FORMULAR-ROUTINE.md** | Neues Formular bauen (5-Sektionen-Standard) |
 | **FRAGE-ROUTINE.md** | Checkliste VOR jedem neuen Formular/Projekt |
-| **FOTO-ROUTINE.md** | Screenshots & Fotos mit Text/Bild an Claude übergeben |
+| **FOTO-ROUTINE.md** | Fotos und Screenshots an Claude übergeben + Glow-Tools |
+| **MAGIX-ROUTINE.md** | Bilder mit Volt/Glow-Effekt bearbeiten (magix.py) |
+| **MAGIC-ZOOM-ROUTINE.md** | Glow + Ken-Burns Video fuer Reels (magic_zoom.py) |
+| **SED-ROUTINE.md** | Dateien direkt in Termux aendern - KEIN Download |
 | **KONFLIKT-ROUTINE.md** | git push rejected / Merge-Konflikte lösen |
 | **CURL-CHECK-ROUTINE.md** | Live-Deployment ohne Browser verifizieren |
 | **WINDOWS-ROUTINE.md** | ⚡ AKTIVIEREN wenn André sagt "bin am PC" |

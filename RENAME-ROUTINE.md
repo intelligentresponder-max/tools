@@ -115,8 +115,8 @@ deploy combo.mp4
 ## Wichtig
 
 - **Branch:** `git push` nutzt automatisch den richtigen Branch.
-  Bei "rejected" → erst `git pull --no-edit && git push`
-  (einmalig vorher: `git config --global pull.rebase false`)
+  Bei "rejected" → erst `git pull --rebase && git push`
+  (einmalig vorher: `# pull.rebase bleibt true (Standard laut KONFLIKT-ROUTINE)`)
 - **Login:** Beim Push fragt Termux nach Username + Token (PAT). Das gibst nur du ein.
 - **Ordnernamen klein:** Repos liegen lokal klein, z.B. `~/sneaks4seek`.
   Die Live-URL bleibt trotzdem mit grossem S — das ist normal.
@@ -133,4 +133,4 @@ deploy combo.mp4
 | Eine Datei live | `deploy datei.html` |
 | Mehrere live | `deploy a.html b.html` |
 | Nur reinkopieren | `grab datei.html` |
-| Push abgelehnt? | `git pull --no-edit && git push` |
+| Push abgelehnt? | `git pull --rebase && git push` |

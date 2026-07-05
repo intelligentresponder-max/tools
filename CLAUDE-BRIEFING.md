@@ -121,3 +121,7 @@ Stattdessen: Jede Dateiänderung als Termux-Befehl liefern:
   EOF2
 
 Dann sofort Push-Befehl hinterher. Nie "erstellt" sagen ohne Termux-Befehl.
+
+## BACKFALL — Notfall-Wissensload
+Wenn Claude den Kontext verloren hat oder neu startet:
+Ein Befehl, alles wichtige auf einmal. Danach ist Claude im Bild.

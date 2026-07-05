@@ -137,3 +137,15 @@ Claude arbeitet in /tmp — kein GitHub-Auth vorhanden. Dateien immer per presen
 
 ## web_fetch funktioniert nicht fuer JavaScript-Seiten
 texter-portfolio und andere JS-Seiten kann Claude nicht lesen. Stattdessen: Screenshot schicken.
+
+## Samsung -1 Problem beim Download
+Samsung hängt automatisch -1 an den Dateinamen wenn die Datei schon existiert.
+Beispiel: housekeeping.html → housekeeping-1.html
+
+Lösung: Immer zuerst prüfen:
+ls ~/storage/downloads/DATEINAME*
+
+Dann mit dem richtigen Namen kopieren:
+cp ~/storage/downloads/DATEINAME-1.html ~/repo/DATEINAME.html
+
+Merksatz: Samsung -1 = nimm die -1 Version.

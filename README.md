@@ -13,6 +13,12 @@
 | **MAGIX-ROUTINE.md** | Bilder mit Volt/Glow-Effekt bearbeiten (magix.py) |
 | **MAGIC-ZOOM-ROUTINE.md** | Glow + Ken-Burns Video fuer Reels (magic_zoom.py) |
 | **SED-ROUTINE.md** | Dateien direkt in Termux aendern - KEIN Download |
+| **SEO-ROUTINE.md** | Texte nach Google E-E-A-T + GEO 2026 schreiben |
+| **CONTENT-ROUTINE.md** | Posts, Flyer, Scripts, Social Media - ueberall |
+| **SEO-ROUTINE.md** | Texte nach Google E-E-A-T + GEO 2026 schreiben |
+| **CONTENT-ROUTINE.md** | Posts, Flyer, Scripts, Social Media - ueberall |
+| **SEO-ROUTINE.md** | Texte nach Google E-E-A-T + GEO 2026 schreiben |
+| **CONTENT-ROUTINE.md** | Posts, Flyer, Scripts, Social Media - ueberall |
 | **KONFLIKT-ROUTINE.md** | git push rejected / Merge-Konflikte lösen |
 | **CURL-CHECK-ROUTINE.md** | Live-Deployment ohne Browser verifizieren |
 | **WINDOWS-ROUTINE.md** | ⚡ AKTIVIEREN wenn André sagt "bin am PC" |

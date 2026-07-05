@@ -108,3 +108,16 @@ cat > ~/tools/DATEI.md << 'EOF2'
 ...Inhalt...
 EOF2
 Dann push. NIEMALS auf /tmp verlassen.
+
+## GOLDENE REGEL 3: Kein /tmp — immer direkt
+Claude bearbeitet NIEMALS Dateien in /tmp und gibt sie dann als "fertig" aus.
+/tmp ist Claudes lokaler Speicher — André sieht ihn nicht.
+
+Stattdessen: Jede Dateiänderung als Termux-Befehl liefern:
+  sed -i 's/alt/neu/' ~/tools/datei.md
+  oder
+  cat >> ~/tools/datei.md << 'EOF2'
+  ...Inhalt...
+  EOF2
+
+Dann sofort Push-Befehl hinterher. Nie "erstellt" sagen ohne Termux-Befehl.

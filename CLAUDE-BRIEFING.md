@@ -1,127 +1,102 @@
 # CLAUDE-BRIEFING.md
-> Diese Datei liest Claude (oder jede KI) am Anfang jeder Coding-Session.
-> Sie definiert WIE gearbeitet wird — nicht WAS.
-> Stand: Juli 2026 | André Schwarz / ASGlobal
+> Pflichtlektüre für jede neue Claude-Instanz die mit André Schwarz arbeitet.
+> Stand: Juli 2026 | Maintainer: André Schwarz / ASGlobal Frankfurt
 
 ---
 
-## 👤 Wer hier sitzt
+## 👤 Wer ist André?
 
-André ist Copywriter und Digitalisierungsberater — **kein Programmierer**.
-Er arbeitet auf Termux/Android (Handy + Tablet), später auch PC.
-Coding-Level: absoluter Anfänger. Und das ist okay — dafür gibt es dieses Briefing.
-
-**Arbeitsregel Nr. 1: Gehe immer vom ungünstigsten Fall aus.**
-Wenn ein Befehl auf 2 Arten verstanden werden kann, wird er auf die falsche Art verstanden werden. Plane das ein.
-
----
-
-## 📏 Regeln für Claude
-
-### 1. Ein Befehl pro Schritt — dann warten
-Keine 5-Zeilen-Blöcke zum Copy-Pasten wenn's kritisch ist.
-Erst Befehl 1, Ausgabe anschauen, dann Befehl 2.
-Ausnahme: harmlose Routine-Abläufe die schon x-mal funktioniert haben.
-
-### 2. Jeden Befehl in EINE kopierbare Box
-Kein Fließtext mit eingebetteten Befehlen. André kopiert die ganze Box —
-wenn da Kommentare oder Prosa drin sind, landen die im Terminal.
-
-### 3. Vor jedem riskanten Befehl: sagen was er tut
-Besonders bei: `rm`, `git push --force`, `git reset`, allem mit `sudo`.
-Format: "⚠️ Das löscht/überschreibt X. Sicher?"
-
-### 4. Immer den Ist-Zustand prüfen bevor gehandelt wird
-Nie annehmen dass ein Ordner/eine Datei existiert. Erst `ls`, `pwd`, `cat` —
-dann handeln. Die Realität weicht IMMER von der Annahme ab.
-
-### 5. Pfade sind die häufigste Fehlerquelle
-- Repos liegen direkt in `~` (nicht in Unterordnern)
-- Download-Ordner: IMMER zuerst prüfen mit: ls ~/storage/downloads/ | grep dateiname
-- Zwei Pfade möglich: ~/storage/shared/Download/ oder ~/storage/downloads/
-- Samsung hängt -1 an wenn Dateiname schon existiert — vor cp immer ls | grep
-- Tablet und Handy haben unterschiedliche Ordnernamen für dasselbe Repo
-  (Beispiel: `valuebet` auf Tablet = `crown-v10` auf Handy)
-- Im Zweifel: erst `pwd` und `ls` machen lassen
-
-### 6. Fehlermeldungen ernst nehmen, nicht raten
-Wenn André eine Fehlermeldung schickt: genau lesen, Ursache erklären
-(in einem Satz, verständlich), dann den Fix. Nicht drei Theorien anbieten.
-
-### 7. Tippfehler einkalkulieren
-André tippt auf Handy-Tastatur. Befehle kommen manchmal verstümmelt an
-(`e git clone...`, `.cd`, fehlende Anführungszeichen).
-Freundlich korrigieren, korrekten Befehl nochmal als Box geben.
-
-### 8. Erfolg IMMER verifizieren
-Nach jedem wichtigen Schritt einen Prüfbefehl mitliefern:
-"Führ danach `ls datei.md` aus — wenn der Name erscheint, hat's geklappt."
-
-### 9. Kein Fachjargon ohne Übersetzung
-Symlink, Merge-Konflikt, Force-Push, Rebase — immer mit Ein-Satz-Erklärung
-beim ersten Auftreten in der Session.
-
-### 10. Sessions dokumentieren
-Neue Erkenntnisse (Pfade, Gotchas, Gerätespezifika) sofort vorschlagen
-für `TERMUX-GOTCHAS.md` oder die passende Routine-Datei.
-Was nicht dokumentiert ist, geht verloren.
+- Freelance Copywriter & Digitalisierungsberater, Frankfurt-Preungesheim
+- Brand: **ASGlobal** | Nebenjob: Turmhotel Frankfurt (Rezeption)
+- GitHub: `intelligentresponder-max`
+- Selbstbezeichnung Coding-Level: **Anfänger** — behandle ihn so
+- Nennt Claude: **"Robo Bro"** — lockerer Ton ist okay
+- Kommuniziert per Stimme auf dem Handy, tippt langsam auf dem Tablet
 
 ---
 
-## 🔄 Session-Wiederaufnahme
+## 📱 Geräte & Umgebungen — WICHTIG
 
-Trigger-Code: **7*7**
-Wenn André das schreibt: letzte Session-Position aus dem Gedächtnis holen
-und exakt dort weitermachen. Kurz zusammenfassen wo wir waren, dann loslegen.
+### Handy / Tablet → **Termux (Android)**
+- Repos direkt in `~` (z.B. `~/tools`, `~/crown-v10`, `~/texter-portfolio`)
+- Downloads: `~/storage/shared/Download` ← **ohne "s"!**
+- Samsung hängt manchmal `(1)` oder `-1` an Dateinamen → `copynew` nutzen
+- Push-Funktionen in `~/.bashrc`: `deploy`, `grab`, `clean`, `copynew`
+- Deploy-Pattern: `cd ~/reponame && deploy "commit message"`
+- **Ein Befehl pro Schritt** — nie mehrere auf einmal schicken
+
+### PC → **Git Bash (Windows)**
+- Windows-Username: **Holy New**
+- Home-Pfad: `C:\Users\Holy New\` = `~/` in Git Bash
+- Downloads: `~/Downloads/dateiname`
+- Repos müssen ggf. erst geklont werden: `git clone URL foldername`
+- Bekannte geklonte Repos: `texter-portfolio` → als `texter` geklont
+- Push-Pattern PC:
+  ```bash
+  cd ~/reponame
+  cp ~/Downloads/datei.html .
+  git add datei.html
+  git commit -m "beschreibung"
+  git push
+  ```
+- LF/CRLF-Warning auf Windows = **harmlos, ignorieren**
+- `~` in Git Bash = `/c/Users/Holy New/`
+
+### Signal "Ich bin am PC"
+Wenn André sagt **"ich bin am PC"** → sofort auf Git Bash / Windows umschalten.
+Andere Pfade, andere Befehle, kein Termux-Syntax.
 
 ---
 
-## 🖥️ Geräte-Übersicht
+## 📁 Repo-Übersicht
 
-| Gerät | Termux | Besonderheit |
+| Repo | Zweck | Gerät |
 |---|---|---|
-| Samsung Handy | ✅ | Haupt-Arbeitsgerät, Repos in `~` |
-| Tablet | ✅ | Ältere Repo-Stände möglich! Ordnernamen können abweichen |
-| PC | geplant | Setup steht noch aus |
+| `tools` | Diese Docs hier | alle |
+| `crown-v10` | CROWN Wett-System | Handy/Tablet |
+| `turmhotel` | Gästeportal + Housekeeping App | alle |
+| `texter-portfolio` | Portfolio André (als `texter` geklont am PC) | alle |
+| `bewerbung-copywriter` | Bewerbung Roman Mayer GmbH | alle |
+| `sneaks4seek` | Streetwear-Marktplatz | Handy |
 
-**Warnung:** Vor jedem Push prüfen von welchem Gerät der aktuellste Stand kommt.
-Der Tablet-Force-Push vom Juli 2026 hat eine neuere Handy-Version überschrieben —
-so etwas nie wieder ohne vorherigen Versions-Vergleich.
+---
+
+## 🔧 Arbeitsregeln — PFLICHT
+
+1. **Ein Befehl pro Schritt** — nie Blöcke schicken die André blind eintippt
+2. **Erst Verzeichnis prüfen** bevor irgendwas gemacht wird: `pwd`
+3. **Vor destruktiven Befehlen** (force-push, reset, rm) explizit warnen
+4. **Kein `/tmp` für finale Dateien** — immer direkt ins Ziel-Repo schreiben
+5. **Samsung Download-Check:** `ls ~/storage/shared/Download/DATEINAME*` vor jedem `cp`
+6. **Nie Funktionsnamen raten** — erst in der Datei nachschauen
+7. **LF/CRLF am PC** = harmlos, erwähnen aber nicht aufhalten
+8. **Force-Push nur nach expliziter Warnung** — nie einfach so
+9. **Pfad-Kontext merken:** Termux vs. Git Bash macht große Unterschiede
+10. **Neue Erkenntnisse** → nach spätestens 3 ans tools repo erinnern
+
+---
+
+## 🚨 Lessons Learned (nie wieder)
+
+- **Juli 2026:** Force-Push vom Tablet hat neuere Handy-Version von crown-v10 überschrieben → immer erst vergleichen
+- **Symlinks auf Handy:** `markets.py` war ein Symlink der auf Tablet-Pfad zeigte → kaputt auf Handy
+- **`/tmp`-Falle:** Claude schreibt Datei nach `/tmp`, aber `git` im Repo merkt nichts → Commit zeigt "nothing to commit"
+
+---
+
+## 🏨 Turmhotel Frankfurt — Kontext
+
+- Inhaberin: Tanja
+- Projekte: Gästeportal (GitHub Pages), Housekeeping Manager v3, WhatsApp-Widget
+- Hotel-Branding: Grün `#2e6b4f`, Krone-Logo ♔, Fonts: Cormorant Garamond + Jost
+- Adresse: Eschersheimer Landstraße 20, 60322 Frankfurt
+- Zimmer: 77 (Haupthaus + Nebenhaus)
+- Hausdame kommuniziert über WhatsApp-Gruppe (Link = Platzhalter, noch einzutragen)
 
 ---
 
 ## 💬 Ton
 
-Locker, direkt, "Robo Bro" ist okay. Aber bei Risiko-Aktionen: klar und deutlich
-warnen, auch wenn's die Stimmung kurz bremst. Lieber einmal zu vorsichtig.
-
-## GOLDENE REGEL: Kein Download
-Dateien NIE per Download-Upload-Workflow aendern.
-Immer direkt in Termux mit sed, echo, oder cat >> bearbeiten.
-Beispiel: sed -i 's/alt/neu/' ~/repo/datei.html
-Dann: git add datei && git commit -m "..." && git push
-Download = Zeitverschwendung + Samsung-Umbenennungsproblem.
-
-## GOLDENE REGEL 2: Dateien direkt in Termux erstellen
-Wenn Claude sagt "erstellt" — IMMER sofort Termux-Befehl mitliefern:
-cat > ~/tools/DATEI.md << 'EOF2'
-...Inhalt...
-EOF2
-Dann push. NIEMALS auf /tmp verlassen.
-
-## GOLDENE REGEL 3: Kein /tmp — immer direkt
-Claude bearbeitet NIEMALS Dateien in /tmp und gibt sie dann als "fertig" aus.
-/tmp ist Claudes lokaler Speicher — André sieht ihn nicht.
-
-Stattdessen: Jede Dateiänderung als Termux-Befehl liefern:
-  sed -i 's/alt/neu/' ~/tools/datei.md
-  oder
-  cat >> ~/tools/datei.md << 'EOF2'
-  ...Inhalt...
-  EOF2
-
-Dann sofort Push-Befehl hinterher. Nie "erstellt" sagen ohne Termux-Befehl.
-
-## BACKFALL — Notfall-Wissensload
-Wenn Claude den Kontext verloren hat oder neu startet:
-Ein Befehl, alles wichtige auf einmal. Danach ist Claude im Bild.
+Locker, direkt, "Robo Bro" ist okay.
+Bei Risiko-Aktionen: **klar und deutlich warnen**, auch wenn's die Stimmung bremst.
+Lieber einmal zu vorsichtig als einmal Force-Push zu viel.

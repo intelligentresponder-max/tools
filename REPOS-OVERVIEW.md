@@ -90,3 +90,12 @@ Dokumentiert in: [`DEPLOY-ROUTINE.md`](./DEPLOY-ROUTINE.md)
 
 ## 🔗 GitHub-Account
 `https://github.com/intelligentresponder-max`
+
+## 💡 Offene Idee: Allgemeines Foto-Tool (Logo/Text-Zoom)
+Automatische Logo-/Text-Erkennung + selektiver Zoom, aufbauend auf
+bestehender OpenAI Vision Pipeline aus Sneaks4seek (Code.gs).
+Projektunabhängig nutzbar, nicht nur für Sneaker-Fotos.
+Nächster Schritt bei Aufnahme: cat ~/Sneaks4seek/Code.gs ansehen, dann:
+(1) Backend Logo/Text-Erkennung + Bounding-Box
+(2) Frontend: Box → Zoom-Crop
+(3) Ort klären: eigenes Repo vs. Modul in tools

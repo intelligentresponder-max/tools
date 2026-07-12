@@ -149,3 +149,7 @@ Dann mit dem richtigen Namen kopieren:
 cp ~/storage/downloads/DATEINAME-1.html ~/repo/DATEINAME.html
 
 Merksatz: Samsung -1 = nimm die -1 Version.
+## Git-Regel
+NIE 'git init' im Home!
+Immer erst: cd ~/projekt && pwd
+Sonst landen .ssh und .git-credentials im Repo.

@@ -110,3 +110,9 @@ Lieber einmal zu vorsichtig als einmal Force-Push zu viel.
 - **git-Desync:** Lokaler Ordner kann veraltet sein trotz "up to date" Meldung (nach Reset/Neuklon). Bei Verdacht: `git fetch origin && git reset --hard origin/main` (verwirft lokale uncommitted Änderungen!)
 - **localStorage-Falle:** HSK-Tool speichert nur PRO BROWSER, kein Sync zwischen Geräten/Tabs. Team-Nutzung braucht 1 gemeinsames Gerät ODER Export/Import-Workflow — sonst sieht jeder einen anderen Stand.
 - **Datenmodell Turmhotel:** 11–55 (2-stellig) = Vorderhaus = eigentlich HAUPTHAUS (App-Label aktuell falsch vertauscht mit Hinterhaus). 101–510 (3-stellig) = Hinterhaus/Nebenhaus.
+
+## 📌 BACKFALL-Vollständigkeits-Regel
+Bei Trigger BACKFALL: nicht nur tools-Repo lesen, sondern bei Bedarf auch
+die relevanten Projekt-Repos (turmhotel, sneaks4seek, texter-portfolio,
+bewerbung-copywriter, crown-v10) kurz gegenchecken, wenn das Gespräch
+dorthin geht — nicht blind auf altes Wissen verlassen.

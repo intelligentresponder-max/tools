@@ -100,3 +100,13 @@ Andere Pfade, andere Befehle, kein Termux-Syntax.
 Locker, direkt, "Robo Bro" ist okay.
 Bei Risiko-Aktionen: **klar und deutlich warnen**, auch wenn's die Stimmung bremst.
 Lieber einmal zu vorsichtig als einmal Force-Push zu viel.
+
+---
+
+## 🚨 Lessons Learned — 12.07.2026 (Turmhotel HSK v3)
+
+- **Escaped-Backtick-Bug:** Ein einziger \` oder \${...} in Template Literals killt das GESAMTE Script lautlos — kein Tab reagiert, alle Zähler bleiben 0. Vor JEDEM Push Pflicht-Check:
+  `sed -n '/<script>/,/<\/script>/p' DATEI.html | grep -v '<script>\|</script>' > ~/hk.js && node --check ~/hk.js`
+- **git-Desync:** Lokaler Ordner kann veraltet sein trotz "up to date" Meldung (nach Reset/Neuklon). Bei Verdacht: `git fetch origin && git reset --hard origin/main` (verwirft lokale uncommitted Änderungen!)
+- **localStorage-Falle:** HSK-Tool speichert nur PRO BROWSER, kein Sync zwischen Geräten/Tabs. Team-Nutzung braucht 1 gemeinsames Gerät ODER Export/Import-Workflow — sonst sieht jeder einen anderen Stand.
+- **Datenmodell Turmhotel:** 11–55 (2-stellig) = Vorderhaus = eigentlich HAUPTHAUS (App-Label aktuell falsch vertauscht mit Hinterhaus). 101–510 (3-stellig) = Hinterhaus/Nebenhaus.

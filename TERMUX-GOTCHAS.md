@@ -153,3 +153,9 @@ Merksatz: Samsung -1 = nimm die -1 Version.
 NIE 'git init' im Home!
 Immer erst: cd ~/projekt && pwd
 Sonst landen .ssh und .git-credentials im Repo.
+
+## Mehrere Downloads mit gleichem Namen — Samsung benennt die NEUE Datei um, nicht die alte
+Bei wiederholten Downloads derselben Datei (z.B. mehrfach aktualisierte UEBERGABE-Datei) landet
+die neueste Version in "-1", "-2", "-3" usw. — nicht in der namenlosen Originaldatei!
+Nie nach Namen raten, immer per Zeitstempel die neueste holen:
+ls -t ~/storage/downloads/DATEINAME*.md | head -1

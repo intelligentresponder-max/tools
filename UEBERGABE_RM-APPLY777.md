@@ -1,96 +1,88 @@
-# UEBERGABE_RM-APPLY777.md — Bewerbung Roman Mayer GmbH
-> Stand: 14.07.2026 | Trigger: **RM-apply777**
-> Bei Trigger: diese Datei lesen, danach mit offenen Punkten unten weitermachen.
+# SESSION-ÜBERGABE RM-APPLY777 — 17.07.2026 (Update 2)
+> Trigger nächste Session: BACKFALL 7*7 — dieses Dokument zuerst laden, dann tools-Repo (CLAUDE-BRIEFING.md, TERMUX-GOTCHAS.md, DEPLOY-ROUTINE.md).
 
----
+## 🎯 ZIEL: Bewerbung HEUTE abschicken
+André will die Bewerbung bei Roman Mayer GmbH heute fertigstellen und abschicken.
+Das ist die oberste Priorität — nicht nachlassen.
 
-## 🎯 Ziel
-André bewirbt sich als Copywriter bei **Roman Mayer GmbH** (Marketing-Agentur,
-Copywriting für Coaches/Berater/Personenmarken, karriere.romanmayer.com).
-Repo-Name bewusst ohne Klarnamen im Titel: **`rm-apply`** (Datenschutz-Entscheidung,
-siehe unten).
+## ✅ SEIT LETZTER ÜBERGABE ERLEDIGT
+- **Lebenslauf ist jetzt in rm-apply!** Aus `bewerbung-copywriter/lebenslauf.html` übernommen,
+  vier "Copywriter"-Stellen bereinigt (Titel-Tag, Meta-Description, Job-Titel bei ASGlobal, Footer),
+  Telefonnummer war schon korrekt (01525 6044541). Live geprüft: 0 Treffer für "Copywriter".
+  Link: https://intelligentresponder-max.github.io/rm-apply/lebenslauf.html
+  ⚠️ Noch NICHT von der Startseite (`index.html`) aus verlinkt — Button/Kachel fehlt noch.
+- **Anträge sind bereits vollständig!** `antraege.html` (schon länger in rm-apply) enthält ein
+  komplettes Archiv mit 53 einzelnen Anträgen 2016–2025 inkl. Status-Kennzeichnung — deckt alle
+  in der Story erwähnten Anträge ab (OF 232/10 → 380/10, OF 406/10, OF 603/10, OF 628/10 etc.).
+  Keine weitere Arbeit hier nötig.
 
----
+## 🚨 KRITISCHER BLOCKER — Anschreiben fehlt noch
+**rm-apply hat immer noch KEIN Anschreiben!**
+- `anschreiben.html` → 404 in rm-apply, `index.html` verlinkt auf nichts dergleichen
+- Existiert nur in `bewerbung-copywriter/index.html` (Anrede "Hallo Roman,", PDF-Download-Button)
+- Verstößt aktuell gegen Branding-Regeln: Titel-Tag enthält "Copywriter" UND den Arbeitgebernamen
+  "Roman Mayer GmbH" (verboten in crawlbaren SEO-Feldern — Body-Text darf den Namen behalten)
 
-## ✅ Was heute (14.07.2026) erledigt wurde
+**Nächste Schritte:**
+1. `bewerbung-copywriter/index.html` per curl/raw.githubusercontent nach rm-apply als
+   `anschreiben.html` holen
+2. "Copywriter" → "Texter"/"Ghostwriter" ersetzen
+3. Titel-Tag/Meta-Description von Arbeitgebername befreien (Body-Text darf ihn behalten)
+4. Telefonnummer gegenchecken (muss 01525 6044541 sein, alte Nummer 0163 469 2255 taucht
+   in dieser Session immer wieder auf)
+5. **NEU: Passwortschutz einbauen** — André möchte das Anschreiben mit einem einfachen
+   Passwort sichern (simple JS-Sperre reicht, kein echtes Backend nötig auf GitHub Pages).
+   Passwort wird NICHT öffentlich kommuniziert, sondern separat per E-Mail an Roman mitgeteilt.
+   → Mit André klären: welches Passwort genau (Vorschlag stand noch aus)
+6. Von `index.html` (Startseite) aus verlinken — Anschreiben UND Lebenslauf brauchen noch
+   je einen Button/eine Kachel auf der Startseite
+7. Pushen, live prüfen
 
-### `rm-apply` — eigenes Bewerbungs-Repo
-- Live-Repo: `https://github.com/intelligentresponder-max/rm-apply`
-- Vermutliche GitHub-Pages-URL: `https://intelligentresponder-max.github.io/rm-apply/`
-  (noch nicht verifiziert ob Pages aktiviert ist — bei Bedarf in Settings → Pages prüfen)
-- Design/Layout-Struktur bewusst an Roman Mayers eigener Karriere-Seite orientiert
-  (Layout-Muster übernommen, NICHT Texte/Fotos/Wortmarke):
-  - Voller Hero mit Foto (Split-Layout: Text links, Portrait rechts)
-  - Helle "Über mich"-Zwischenzone mit Stat-Reihe (60+ Anträge · 77 Zimmer · 30 Sprachen)
-  - Vorteile-Zeilen-Layout ("Was ich mitbringe")
-  - Card-Footer mit Button-Stil ("Ansehen →") mirrort ihre Job-Karten
-- Hero-Foto: `andre-hero.webp` (aus Selfie-Auswahl, mit `cwebp -q 82` optimiert, 900px breit, 64 KB)
-- Telavendelele (Auto-Verkaufstexte Italien) ergänzt: kleine Zeile im Hero + eigene Karte
-  unter "Ausgewählte Arbeiten"
-- `.claude/agents/Robo Bro.agent.md`: "Roman Mayer" aus der öffentlichen SEO-Keyword-Liste
-  entfernt (Datenschutz — Name soll nicht in Meta-Tags auftauchen)
+## 📋 OFFEN — Arbeitsproben-Seite (vereinbart, Umfang erweitert)
+Neue Kachel **"Arbeitsproben"** in rm-apply, neue Seite `arbeitsproben.html`,
+gespeist aus `bewerbung-copywriter/arbeitsproben.html`.
 
-### Datenschutz-Bereinigung — Klarname raus aus öffentlichen Dateinamen
-- `bewerbung-copywriter/Anschreiben_Andre_Schwarz_Roman_Mayer.pdf`
-  → `Anschreiben_Andre_Schwarz.pdf` (+ 2 Links in `index.html` mit angepasst)
-- `texter-portfolio/Andre_Schwarz_Bewerbung_RomanMayer_v2.pdf`
-  → `Andre_Schwarz_Bewerbung_v2.pdf`
-- ⚠️ Downloads-Ordner auf dem Handy bewusst NICHT angefasst (privat, kein Risiko)
+**Bereits recherchiert, bereit zum Übertragen:**
+1. **Copy Code Agency** — live: `intelligentresponder-max.github.io/copy-code-agency-website/`.
+   Kollaboration mit Fullstack-Entwickler Tomasz Szafrański ("Code trifft Copy").
+   André-Anteil: Conversion Copy & Brand (Landingpages, SEO-Copy, E-Mail-Sequenzen),
+   plus Mitarbeit an KI-Lebenslauf-Optimizer, Value-Bet-Dashboard (baut auf CROWN v10 auf),
+   IT-Recruiting-Plattform DE/PL. Entwurf für Kartentext steht bereit, noch nicht eingefügt.
+   ⚠️ Team-Sektion der Quellseite selbst nennt André dort noch "Copywriter" — nur relevant,
+   falls man mehr als die Kurzfassung übernimmt.
+2. **mindful7777** — live: `intelligentresponder-max.github.io/mindful7777/` (Wellness/Selbsthypnose, GEO-optimiert)
+3. **Frankfurt Energie Online** — live: `frankfurt-energie.online` (Conversion-Landingpage für TELESON AG)
+4. **Recruiting-Texte in 8 Sprachen** — PDF, liegt in bewerbung-copywriter als `recruiting-8-sprachen.pdf` → muss mitkopiert werden
+5. **KfW-Businessplan** — PDF, liegt in bewerbung-copywriter als `KfW_Businessplan_Nachbarschaftshilfe.pdf` → muss mitkopiert werden
 
-### "Projekt anfragen"-Buttons entfernt (beide Repos)
-Grund: André bewirbt sich exklusiv bei einem Unternehmen — generische
-"Jetzt buchen"-CTAs wirken wie automatisch generierter Freelancer-Sales-Text.
-- `texter-portfolio` + `bewerbung-copywriter`: `willkommensbuch.html`, `crown-valuebet.html`,
-  `content.de.js` (dort ungenutzt, aber sicherheitshalber mit bereinigt)
-- Übrig bleibt jeweils nur "Mehr Arbeitsproben"
+**Bereits als eigene Kacheln vorhanden — NICHT doppelt aufnehmen:**
+Wahlprogramm, Anträge, CROWN v10 (crown-valuebet.html), BanglaHilfe
 
-### Willkommensbuch-Showcase — Ansprache umgestellt
-- Vorher: adressierte Hotelbesitzer/Geschäftsführung ("Ihr Haus verdient klare Worte")
-- Jetzt: adressiert Roman Mayer als zukünftigen Chef ("Genau diese Sorgfalt bringe ich
-  zu Roman Mayer")
-- ⚠️ **OFFEN:** Zitat-Sektion mit DE/EN-Beispielzeile ist aktuell nur **nachempfunden**,
-  nicht das echte Original — André fand die Reaktion "nicht gelungen" und will
-  **echte Zitate** aus dem tatsächlichen Willkommensbuch (2-3 Stellen)
-- ⚠️ **OFFEN:** "+15 weitere" Sprachen-Chip soll durch die **vollständige Liste aller
-  30+ Sprachen** ersetzt werden — André besteht darauf, nichts zu verstecken
+## ✅ WAS DAVOR SCHON FERTIG WURDE (17.07.2026)
+- `index.html` komplett wiederhergestellt (war durch zwei fehlerhafte Commits auf 3 von 6 Kacheln
+  geschrumpft + hatte eine Tool-Fehlermeldung als Klartext im HTML) → alle 6 Original-Kacheln
+  wieder da: Digitalisierung, Callcenter, Willkommensbuch, Housekeeping, Wahlprogramm, Anträge, Tech
+- `antraege.html`, `crown-valuebet.html`, `Wahlprogramm-Freie-Waehler-Frankfurt-2026.pdf` aus
+  texter-portfolio nach rm-apply umgezogen, alle Links lokalisiert
+- "Vollständiges Portfolio"-Button (externer Link auf texter-portfolio) entfernt — kompletter
+  Inhalt von texter-portfolio steckt jetzt in rm-apply, kein Cross-Link mehr nötig
+- Neue Kachel BanglaHilfe hinzugefügt (Behördenkommunikation, DE/Bengali, live verlinkt)
+- Hero-Foto (`andre-hero.webp`) neu zugeschnitten (Arm + unruhiger Hintergrund raus, enger auf
+  Kopf/Schultern) — Varianten als PNG/JPG geliefert, aber **noch nicht ins Repo gepusht**,
+  André muss das finale Bild noch hochladen
 
-### Texter-portfolio — alter Fehlversuch verworfen
-- Commit `2dc7350` (RomanMayer-Branding im Titel, komplett anderes Navy/Gold-Design,
-  neue `lebenslauf.html`) wurde per `git reset --hard origin/main` verworfen
-- Bleibt nur lokal im Reflog auf Andrés Handy, nicht gepusht, kein Risiko
+## 🔧 KONTEXT & REGELN (Kurzfassung, Details im tools-Repo)
+- André: Frankfurt, Coding-Anfänger, aktuell am Handy/Termux (Signal "ich bin am PC" = Git Bash/Windows wechseln)
+- **Ein Befehl pro Schritt**, nie Blöcke zum Blind-Einfügen
+- Branding: kein "Copywriter" irgendwo, kein Arbeitgebername in Title/Meta/OG-Tags (Body-Text ok)
+- Sneaks4seek darf NIEMALS in Bewerbungskontext auftauchen
+- STAFF-Repo ist komplett separates Projekt, nie mit rm-apply verknüpfen
+- Alle Portfolio-Aussagen brauchen einen verifizierbaren Link
+- Telefonnummer überall: 01525 6044541 (alte falsche Nummer: 0163 469 2255 — Vorsicht, taucht immer wieder auf)
+- Vor jedem Edit an mehrfach bearbeiteten Dateien: `git fetch origin && git log HEAD..origin/main --oneline`
+- Graphify (uv tool graphifyy) läuft nur auf dem PC, nicht auf Termux (Kompilierfehler bei tree-sitter-Paketen)
 
----
-
-## 🔴 Wichtigster offener Punkt für die nächste Session
-
-**André hat das echte Willkommensbuch gefunden**, kann es aber in diesem Chat nicht
-hochladen. Nächste Schritte, sobald der Trigger **RM-apply777** kommt:
-
-1. Nachfragen, wie er den Text bereitstellen will (Foto, Copy-Paste, Datei-Upload
-   in neuem Chat, etc.)
-2. Echte Zitate (2-3 Stellen) für die Willkommensbuch-Showcase-Seite einbauen
-   → ersetzt die aktuelle "nachempfundene" Platzhalter-Zitat-Sektion in
-   `texter-portfolio/willkommensbuch.html` UND `bewerbung-copywriter/willkommensbuch.html`
-3. Vollständige Sprachenliste (alle 30+, nicht "+15 weitere") in beiden Dateien einbauen
-
----
-
-## 📋 Weiterhin offen (aus früheren Sessions, noch nicht angefasst)
-
-- Handschriftliche Korrekturen aus dem 143-Block-Korrektur-PDF
-  (`Korrektur_KOMPLETT_Portfolio_PdG_12-07.pdf`) — bisher nur Workflow besprochen
-  (Block-Nummer + Diktat), noch keine einzige Korrektur verarbeitet
-- Foto auf `bewerbung-copywriter` weiterhin als "zu dunkel" gemeldet — noch nicht behoben
-- `rm-apply` sollte laut ursprünglichem Plan noch weitere Unterseiten bekommen:
-  `willkommensbuch.html`, `antraege.html`, `crown-valuebet.html`,
-  Wahlprogramm-PDF (aktuell verlinkt `rm-apply` extern auf `texter-portfolio`,
-  nicht lokal kopiert)
-
----
-
-## 🔧 Technischer Kontext (Kurzfassung, Details siehe CLAUDE-BRIEFING.md)
-- André: Coding-Anfänger, Termux (Handy/Tablet) + Git Bash (PC "Holy New")
-- Ein Befehl pro Schritt, nie Blöcke blind einfügen lassen
-- Kein Push-Zugriff für Claude — André kopiert Dateien aus Downloads selbst und pusht
-- Bei Datei-Konflikten (`git pull --rebase`): erst `--stat` prüfen bevor irgendwas
-  gemerged wird, im Zweifel `git rebase --abort` und nachfragen
+## 📍 Live-Links
+- Repo: https://github.com/intelligentresponder-max/rm-apply
+- Live: https://intelligentresponder-max.github.io/rm-apply
+- Lebenslauf: https://intelligentresponder-max.github.io/rm-apply/lebenslauf.html
